@@ -40,6 +40,7 @@ requirejs.config({
       "message"    : "js/message",
       "permissions": "js/permissions",
       "guide"      : "js/guide",
+      "custom_i18n": "js/custom_i18n",
     },
     shim: {
         "mousetrap"    : {

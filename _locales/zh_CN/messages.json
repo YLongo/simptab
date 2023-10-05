@@ -505,6 +505,14 @@
         "message": "常用网址"
     },
 
+    "options_custom_lang": {
+        "message": "语言"
+    },
+
+    "options_custom_lang_label": {
+        "message": "请选择语言"
+    },
+
     "options_custom_tp_carousel_label": {
         "message": "请选择常用工具栏的显示方式"
     },

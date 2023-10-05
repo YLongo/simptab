@@ -505,6 +505,14 @@
         "message": "常用網址"
     },
 
+    "options_custom_lang": {
+        "message": "語言"
+    },
+
+    "options_custom_lang_label": {
+        "message": "請選擇語言"
+    },
+
     "options_custom_tp_carousel_label": {
         "message": "請選擇常用工具欄的顯示方式"
     },

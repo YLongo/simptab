@@ -505,6 +505,14 @@
         "message": "Topsites"
     },
 
+    "options_custom_lang": {
+        "message": "Languages"
+    },
+
+    "options_custom_lang_label": {
+        "message": "Pleas select language"
+    },
+
     "options_custom_tp_carousel_label": {
         "message": "Pleas select topsites mode"
     },

@@ -256,6 +256,22 @@ define([ "jquery", "mousetrap", "lodash", "notify", "i18n", "comps", "permission
         return tmpl;
     }
 
+    function customLangView() {
+        const lang = localStorage["lang"] || "zh_CN";
+        const items = [
+            {name: "English", value: "en"},
+            {name: "简体中文", value: "zh_CN"},
+            {name: "繁體中文", value: "zh_TW"},
+        ];
+
+        console.log('items:', items);
+        return '<div class="switche" style="margin-bottom:0;">\
+                        <div class="label">' + i18n.GetLang("options_custom_lang_label") + '</div>\
+                        ' + comps.Dropdown(".options .custom-lang", "carousel-dpd", items, lang) + '\
+                    </div>\
+                   ';
+    }
+
     function customTpModel() {
         var textareaState = function( state ) {
             state ? $( ".options .custom-tp-fields" ).removeClass( "hide" ).addClass( "show" ) : $( ".options .custom-tp-fields" ).removeClass( "show" ).addClass( "hide" );
@@ -279,6 +295,15 @@ define([ "jquery", "mousetrap", "lodash", "notify", "i18n", "comps", "permission
             localStorage["simptab-topsites"] = event.data.value;
             $( ".tsstate" ).find("input[value=" + event.data.value + "]").click();
         });
+
+        let lang = $( ".options .custom-lang .carousel-dpd" );
+        if (lang.length > 0) {
+            lang[0].addEventListener( "dropdown", function( event ) {
+                console.log('event data value is:', event.data.value);
+                localStorage["lang"] = event.data.value;
+            });
+        }
+
     }
 
     /*********************************************
@@ -485,6 +510,8 @@ define([ "jquery", "mousetrap", "lodash", "notify", "i18n", "comps", "permission
                             <div class="group bookmarks">' + customBookmarksView() + '</div>\
                             <div class="title">' + i18n.GetLang( "options_custom_tp" ) + '</div>\
                             <div class="group custom-tp">' + customTpView() + '</div>\
+                            <div class="title">' + i18n.GetLang( "options_custom_lang" ) + '</div>\
+                            <div class="group custom-lang">' + customLangView() + '</div>\
                         </div>\
                         ' + footerView() + '\
                     </div>\

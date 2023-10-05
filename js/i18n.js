@@ -1,5 +1,5 @@
 
-define([ "jquery" ], function( $ ) {
+define([ "jquery", "custom_i18n" ], function( $ ) {
 
     "use strict";
 
